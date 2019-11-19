@@ -1,0 +1,16 @@
+{
+  "name": "dougle/cart-api",
+  "description": "A simple API for totalling products in a cart",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [],
+  "autoload": {
+    "psr-0": {
+      "Model\\": "models/",
+      "Controller\\": "controllers/"
+    }
+  },
+  "require": {
+    "ext-http": "*"
+  }
+}
