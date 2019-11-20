@@ -29,7 +29,7 @@ class CartTest extends TestCase
 	 * @return array
 	 */
 	private function mapProductCodes(array $codes) {
-		return array_map(function($code) {
+		return array_map(function ($code) {
 			return ['code' => $code];
 		}, $codes);
 	}
@@ -37,8 +37,8 @@ class CartTest extends TestCase
 	/**
 	 * Test certain product combinations
 	 */
-	public function testCartSubtotalScenarioOne(){
-		$product_codes = $this->mapProductCodes(['ZA','YB','FC','GD','ZA','YB','ZA','ZA']);
+	public function testCartSubtotalScenarioOne() {
+		$product_codes = $this->mapProductCodes(['ZA', 'YB', 'FC', 'GD', 'ZA', 'YB', 'ZA', 'ZA']);
 
 		$response = self::$cart_controller->subtotal($product_codes);
 		$this->assertEquals(32.4, $response);
@@ -47,8 +47,8 @@ class CartTest extends TestCase
 	/**
 	 * Test certain product combinations
 	 */
-	public function testCartSubtotalScenarioTwo(){
-		$product_codes = $this->mapProductCodes(['FC','FC','FC','FC','FC','FC','FC']);
+	public function testCartSubtotalScenarioTwo() {
+		$product_codes = $this->mapProductCodes(['FC', 'FC', 'FC', 'FC', 'FC', 'FC', 'FC']);
 
 		$response = self::$cart_controller->subtotal($product_codes);
 		$this->assertEquals(7.25, $response);
@@ -58,8 +58,8 @@ class CartTest extends TestCase
 	/**
 	 * Test certain product combinations
 	 */
-	public function testCartSubtotalScenarioThree(){
-		$product_codes = $this->mapProductCodes(['ZA','YB','FC','GD']);
+	public function testCartSubtotalScenarioThree() {
+		$product_codes = $this->mapProductCodes(['ZA', 'YB', 'FC', 'GD']);
 
 		$response = self::$cart_controller->subtotal($product_codes);
 		$this->assertEquals(15.4, $response);

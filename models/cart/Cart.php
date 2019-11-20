@@ -10,7 +10,7 @@ class Cart implements \ArrayAccess
 
 	// implement methods from ArrayAccess
 	public function offsetExists($offset) {
-		if($offset instanceof Product){
+		if ($offset instanceof Product) {
 			$offset = $offset->code;
 		}
 
@@ -18,7 +18,7 @@ class Cart implements \ArrayAccess
 	}
 
 	public function offsetGet($offset) {
-		if($offset instanceof Product){
+		if ($offset instanceof Product) {
 			$offset = $offset->code;
 		}
 
@@ -27,7 +27,7 @@ class Cart implements \ArrayAccess
 
 	// square bracket syntax does not apply to this class
 	public function offsetSet($offset, $value) {
-		if($offset instanceof Product){
+		if ($offset instanceof Product) {
 			$offset = $offset->code;
 		}
 
